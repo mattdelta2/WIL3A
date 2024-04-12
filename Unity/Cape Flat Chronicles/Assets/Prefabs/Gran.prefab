@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3297190705930216347}
   m_Layer: 0
   m_Name: Gran
-  m_TagString: Untagged
+  m_TagString: Gran
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4c5a09acab0734cadb9d4ecf650509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Gran
+  dialogueManager: {fileID: 0}
 --- !u!1001 &3365387000808886082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gran Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 60c4e4a0330eba846ad7007c29dd7485, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cf17743419f91f34ca9666767d3fc4a6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

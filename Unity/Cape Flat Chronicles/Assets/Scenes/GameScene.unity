@@ -603,6 +603,57 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55fee2fdbc3c401428d7d5e35d093c46, type: 3}
+--- !u!1 &1197975156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1197975158}
+  - component: {fileID: 1197975157}
+  m_Layer: 0
+  m_Name: NPCManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1197975157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197975156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1746997d9ca461438fbef2e3b8ce956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcList:
+  - npcName: Teacher
+    dialogueLines: []
+  - npcName: Gang Member
+    dialogueLines: []
+  - npcName: Gran
+    dialogueLines: []
+--- !u!4 &1197975158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197975156}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1852741, y: 1.3524334, z: 6.716744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1209255811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3243905134707399778, guid: 55fee2fdbc3c401428d7d5e35d093c46, type: 3}
@@ -652,6 +703,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3243905134707399778, guid: 55fee2fdbc3c401428d7d5e35d093c46, type: 3}
   m_PrefabInstance: {fileID: 1416573023}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1410636063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8185508806671581852, guid: f159840e6a3409144916757e23f2fa8c, type: 3}
+  m_PrefabInstance: {fileID: 945656087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 779281da5c9dc4b4089d368a9809fb51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1416573023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -920,7 +982,7 @@ PrefabInstance:
     - target: {fileID: 6843713950940989703, guid: 702e7a24f3ba8cb40a9e3d92d00cad74, type: 3}
       propertyPath: playerInteract
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1410636063}
     - target: {fileID: 8011474782239880142, guid: 702e7a24f3ba8cb40a9e3d92d00cad74, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1017,3 +1079,4 @@ SceneRoots:
   - {fileID: 1346301691}
   - {fileID: 456521869}
   - {fileID: 945656087}
+  - {fileID: 1197975158}

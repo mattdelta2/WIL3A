@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5265487497072098889}
   m_Layer: 0
   m_Name: Gang Member
-  m_TagString: Untagged
+  m_TagString: GangMember
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4c5a09acab0734cadb9d4ecf650509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcName: Gang Member
+  dialogueManager: {fileID: 0}
 --- !u!1001 &1889295075069208946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gang Member Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 6b80b52c26d4d6f4394932e9ace32a5d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d0a78128fe2aa694aa6dff5889b0416e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
