@@ -13,6 +13,7 @@ public class NPCDialogueManager : MonoBehaviour
     }
 
     public List<NPC> npcList = new List<NPC>();
+    public PlayerStats playerStats;
 
 
     public void DiaplayDialogue(string npcName)
@@ -34,6 +35,9 @@ public class NPCDialogueManager : MonoBehaviour
             Debug.LogError("NPC not found!");
         }
     }
+
+    
+    
 
 }
 
