@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 1699303067}
+    - target: {fileID: 5210065466941307533, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
+      propertyPath: m_Name
+      value: GangDialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 7036999554528271901, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2041,6 +2045,10 @@ PrefabInstance:
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 1699303067}
+    - target: {fileID: 5210065466941307533, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
+      propertyPath: m_Name
+      value: TeacherDialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 7036999554528271901, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2462,6 +2470,10 @@ PrefabInstance:
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 1699303067}
+    - target: {fileID: 5210065466941307533, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
+      propertyPath: m_Name
+      value: GranDialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 7036999554528271901, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -11,6 +11,7 @@ public class ChoiceManager : MonoBehaviour
     public Button lieButton;
 
     public PlayerStats playerStats;
+    public DialogueManager dialogueManager;
     
 
     private void Start()
@@ -64,9 +65,13 @@ public class ChoiceManager : MonoBehaviour
         playerStats.DecreaseGangStatus(1);
         playerStats.IncreaseEducation(1);
 
-        // Hide the choice panel
-        HideChoicePanel();
-        
+        bool hasMoreDialogue = dialogueManager.ProgressDialogue();
+
+
+        if (!hasMoreDialogue)
+        {       // Hide the choice panel
+            HideChoicePanel();
+        }
 
     }
 
@@ -76,8 +81,13 @@ public class ChoiceManager : MonoBehaviour
         playerStats.IncreaseGangStatus(1);
         playerStats.DecreaseEducation(1);
 
-        // Hide the choice panel
-        HideChoicePanel();
-        
+        bool hasMoreDialogue = dialogueManager.ProgressDialogue();
+
+
+        if (!hasMoreDialogue)
+        {       // Hide the choice panel
+            HideChoicePanel();
+        }
+
     }
 }

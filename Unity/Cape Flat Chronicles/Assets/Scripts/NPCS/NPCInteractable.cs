@@ -7,12 +7,12 @@ public class NPCInteractable : MonoBehaviour
 {
     public string npcName; // The name of the NPC
 
-    public NPCDialogueManager dialogueManager;
+    public NPCDialogueManager npcDialogues;
     
     public ChoiceManager choiceManager;
  
     
-
+    /*
     public void Interact()
     {
  
@@ -37,6 +37,21 @@ public class NPCInteractable : MonoBehaviour
         else
         {
             Debug.LogError("NPCDialogueManager not found in the scene.");
+        }
+    }*/
+
+
+    public void Interact(DialogueManager dialogueManager)
+    {
+
+        // Start the dialogue with the NPC's dialogues using the dialogue manager
+        if (npcDialogues != null && npcDialogues.dialogues.Count > 0)
+        {
+            dialogueManager.StartDialogue(npcDialogues.dialogues[0]);
+        }
+        else
+        {
+            Debug.LogError("NPC dialogues not found or empty.");
         }
     }
 }
