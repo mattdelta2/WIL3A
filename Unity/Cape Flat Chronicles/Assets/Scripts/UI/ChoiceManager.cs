@@ -9,6 +9,7 @@ public class ChoiceManager : MonoBehaviour
     public GameObject choicePanel;
     public Button truthButton;
     public Button lieButton;
+    
 
     public PlayerStats playerStats;
     public DialogueManager dialogueManager;
@@ -61,19 +62,29 @@ public class ChoiceManager : MonoBehaviour
 
     private void OnTruthButtonClicked()
     {
-        // Handle the truth choice (e.g., adjust player stats)
-        playerStats.DecreaseGangStatus(1);
-        playerStats.IncreaseEducation(1);
-
-        bool hasMoreDialogue = dialogueManager.ProgressDialogue();
-
-
-        if (!hasMoreDialogue)
-        {       // Hide the choice panel
-            HideChoicePanel();
+        // Handle the truth choice
+        if (playerStats != null)
+        {
+            playerStats.DecreaseGangStatus(1);
+            playerStats.IncreaseEducation(1);
         }
 
+        // Null check before using dialogueManager
+        if (dialogueManager != null)
+        {
+            bool hasMoreDialogue = dialogueManager.ProgressDialogue();
+            if (!hasMoreDialogue)
+            {
+                HideChoicePanel();
+            }
+        }
+        else
+        {
+            Debug.LogError("dialogueManager is not assigned");
+        }
     }
+
+
 
     private void OnLieButtonClicked()
     {

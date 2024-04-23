@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPCDialogueManager : MonoBehaviour
 {
+    //script should be needed
 
     [System.Serializable]
     public class NPC

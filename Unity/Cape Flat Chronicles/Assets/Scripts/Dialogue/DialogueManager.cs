@@ -1,11 +1,15 @@
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.UI;
+
 
 public class DialogueManager : MonoBehaviour
 {
-    private Dialogue currentDialogue; // Current dialogue being displayed
+    public Text dialogueText; // Reference to the UI text element
+    private NPCDialogues.Dialogue currentDialogue; // Current dialogue being displayed
 
     // Method to start a conversation with a given dialogue
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(NPCDialogues.Dialogue dialogue)
     {
         currentDialogue = dialogue;
         // Notify ChoiceManager or other scripts to display the dialogue
@@ -40,6 +44,14 @@ public class DialogueManager : MonoBehaviour
     }
 
     // Event methods for communicating with other scripts (e.g., ChoiceManager)
-    protected virtual void DialogueStarted(Dialogue dialogue) { }
-    protected virtual void DialogueEnded() { }
+    protected virtual void DialogueStarted(NPCDialogues.Dialogue dialogue)
+    { 
+
+        if(dialogueText !=null)
+        {
+            dialogueText.text = $"{ dialogue.speakerName}: { dialogue.dialogueText}";
+        }
+    }
+    protected virtual void DialogueEnded() { 
+    }
 }

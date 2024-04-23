@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-[System.Serializable]
-public class Dialogue
+[CreateAssetMenu(fileName = "NewNPCDialogues", menuName = "Dialogue/NPCDialogues")]
+public class NPCDialogues : ScriptableObject
 {
-    public string speakerName; // The name of the speaker (e.g., NPC or player)
-    public string dialogueText; // The dialogue text
+    public List<Dialogue> dialogues; // List of dialogues for this NPC
 
-    // List of player responses (optional)
-    public List<string> playerResponses;
-
-    // List of next dialogues for branching (optional)
-    public List<Dialogue> nextDialogues;
+    [System.Serializable]
+    public class Dialogue
+    {
+        public string speakerName; // Name of the speaker (NPC or player)
+        public string dialogueText; // Dialogue text
+        public List<Dialogue> nextDialogues; // Next dialogue entries for branching
+    }
 }
