@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
 
@@ -46,5 +46,27 @@ public class PlayerStats : MonoBehaviour
 
 
         Debug.Log("Gang status has decreased to: " + gangStatus);
+    }
+
+    private void Update()
+    {
+        CheckAndChangeScene();
+
+    }
+    public void CheckAndChangeScene()
+    {
+        int educationThreshold = 10;
+        int gangThreshold = 0;
+
+        if(education >= educationThreshold)
+        {
+
+            SceneManager.LoadScene("");
+
+        }
+        if(gangStatus >= gangThreshold)
+        {
+            SceneManager.LoadScene("");
+        }
     }
 }
