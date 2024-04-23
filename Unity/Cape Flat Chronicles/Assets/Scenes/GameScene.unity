@@ -1693,7 +1693,7 @@ PrefabInstance:
     - target: {fileID: 5133339880508650435, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: dialogueManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1699303074}
     - target: {fileID: 5538899535455910568, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: m_Name
       value: Teacher
@@ -2371,7 +2371,7 @@ PrefabInstance:
     - target: {fileID: 5265487497072098889, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: dialogueManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1699303074}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
