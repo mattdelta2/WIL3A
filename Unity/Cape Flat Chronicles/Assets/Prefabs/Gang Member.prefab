@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5944390206452022458}
   - component: {fileID: 5938642667067502222}
   - component: {fileID: 4425674099923672030}
-  - component: {fileID: 5265487497072098889}
   m_Layer: 0
   m_Name: Gang Member
   m_TagString: GangMember
@@ -109,20 +108,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5265487497072098889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4595328973793028778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a4c5a09acab0734cadb9d4ecf650509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcName: Gang Member
-  dialogueManager: {fileID: 0}
 --- !u!1001 &1889295075069208946
 PrefabInstance:
   m_ObjectHideFlags: 0
