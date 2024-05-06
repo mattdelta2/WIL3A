@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
+    public DialogueManager dialogueManager;
+    
+
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -15,7 +22,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 if(collider.TryGetComponent(out NPCInteractable npcInteractable))
                 {
-                    npcInteractable.Interact();
+                    npcInteractable.Interact(dialogueManager);
                 }
             }
         }

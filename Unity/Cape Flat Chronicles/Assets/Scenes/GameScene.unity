@@ -139,6 +139,14 @@ PrefabInstance:
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 1699303067}
+    - target: {fileID: 4808848328380987660, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1699303074}
+    - target: {fileID: 5210065466941307533, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
+      propertyPath: m_Name
+      value: GangDialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 7036999554528271901, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1329,6 +1337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8185508806671581852, guid: f159840e6a3409144916757e23f2fa8c, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1699303074}
     - target: {fileID: 9130478483463278489, guid: f159840e6a3409144916757e23f2fa8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.051689148
@@ -1352,7 +1364,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1986801861876822883, guid: f159840e6a3409144916757e23f2fa8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1699303074}
   m_SourcePrefab: {fileID: 100100000, guid: f159840e6a3409144916757e23f2fa8c, type: 3}
 --- !u!4 &964660593 stripped
 Transform:
@@ -1556,13 +1571,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1406111034}
     - target: {fileID: 3297190705930216347, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
+      propertyPath: npcDialogues
+      value: 
+      objectReference: {fileID: 11400000, guid: 53fd13565a22c7449908bfc18c5e4eb1, type: 2}
+    - target: {fileID: 3297190705930216347, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: choiceManager
       value: 
       objectReference: {fileID: 1406111039}
     - target: {fileID: 3297190705930216347, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: dialogueManager
       value: 
-      objectReference: {fileID: 1197975157}
+      objectReference: {fileID: 1699303074}
     - target: {fileID: 3323312088129466757, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.509037
@@ -1664,13 +1683,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5133339880508650435, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
+      propertyPath: npcDialogues
+      value: 
+      objectReference: {fileID: 11400000, guid: 61370333fba236947bf272844df8bf9a, type: 2}
+    - target: {fileID: 5133339880508650435, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: choiceManager
       value: 
       objectReference: {fileID: 1668553121}
     - target: {fileID: 5133339880508650435, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: dialogueManager
       value: 
-      objectReference: {fileID: 1197975157}
+      objectReference: {fileID: 1699303074}
     - target: {fileID: 5538899535455910568, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: m_Name
       value: Teacher
@@ -1719,7 +1742,7 @@ MonoBehaviour:
     dialogueLines: []
   - npcName: Gran
     dialogueLines: []
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 1699303067}
 --- !u!4 &1197975158
 Transform:
   m_ObjectHideFlags: 0
@@ -1739,6 +1762,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3243905134707399778, guid: 55fee2fdbc3c401428d7d5e35d093c46, type: 3}
   m_PrefabInstance: {fileID: 3491174137537320414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1220956297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1986801861876822883, guid: f159840e6a3409144916757e23f2fa8c, type: 3}
+  m_PrefabInstance: {fileID: 945656087}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1225605553 stripped
 Transform:
@@ -1954,12 +1982,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5453000611247706278, guid: f159840e6a3409144916757e23f2fa8c, type: 3}
   m_PrefabInstance: {fileID: 945656087}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1220956297}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5053f5d808a0d854c8df3a6514260b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1699303074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220956297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc8a7be3851609438a17b67ef40f970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 0}
 --- !u!1 &1829834458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,6 +2082,14 @@ PrefabInstance:
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 1699303067}
+    - target: {fileID: 4808848328380987660, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1699303074}
+    - target: {fileID: 5210065466941307533, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
+      propertyPath: m_Name
+      value: TeacherDialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 7036999554528271901, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2312,13 +2361,17 @@ PrefabInstance:
       value: Gang Member
       objectReference: {fileID: 0}
     - target: {fileID: 5265487497072098889, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
+      propertyPath: npcDialogues
+      value: 
+      objectReference: {fileID: 11400000, guid: 6052cecdb6d52f047b9562eecf205daf, type: 2}
+    - target: {fileID: 5265487497072098889, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: choiceManager
       value: 
       objectReference: {fileID: 1101167539}
     - target: {fileID: 5265487497072098889, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: dialogueManager
       value: 
-      objectReference: {fileID: 1197975157}
+      objectReference: {fileID: 1699303074}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2462,6 +2515,14 @@ PrefabInstance:
       propertyPath: playerStats
       value: 
       objectReference: {fileID: 1699303067}
+    - target: {fileID: 4808848328380987660, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1699303074}
+    - target: {fileID: 5210065466941307533, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
+      propertyPath: m_Name
+      value: GranDialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 7036999554528271901, guid: 904940f1bd384ed4285d81539964e16a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

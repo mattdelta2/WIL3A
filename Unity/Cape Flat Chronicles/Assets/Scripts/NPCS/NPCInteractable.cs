@@ -7,27 +7,23 @@ public class NPCInteractable : MonoBehaviour
 {
     public string npcName; // The name of the NPC
 
-    public NPCDialogueManager dialogueManager;
-    
+    public NPCDialogues npcDialogues;
+
     public ChoiceManager choiceManager;
- 
-    
+    public DialogueManager dialogueManager;
 
-    public void Interact()
+    public void Interact(DialogueManager dialogueManager )
     {
- 
-        
-
-        // Call the DisplayDialogue method with this NPC's name
-        if (dialogueManager != null)
+        // Check if the dialogue manager and npcDialogues are properly assigned
+        if (dialogueManager != null && npcDialogues != null && npcDialogues.dialogues.Count > 0)
         {
-            dialogueManager.DiaplayDialogue(npcName);
-            Debug.Log(npcName);
+            // Start the dialogue using the dialogue manager and the first dialogue in npcDialogues
+            dialogueManager.StartDialogue(npcDialogues.dialogues[0]);
 
+            // Optionally, show the choice panel if necessary
             if (choiceManager != null)
             {
                 choiceManager.ShowChoicePanel();
-                
             }
             else
             {
@@ -36,7 +32,15 @@ public class NPCInteractable : MonoBehaviour
         }
         else
         {
-            Debug.LogError("NPCDialogueManager not found in the scene.");
+            // Log error messages if necessary components are missing
+            if (dialogueManager == null)
+            {
+                Debug.LogError("DialogueManager not assigned in the Interact method.");
+            }
+            if (npcDialogues == null || npcDialogues.dialogues.Count == 0)
+            {
+                Debug.LogError("NPC dialogues not found or empty.");
+            }
         }
     }
 }
