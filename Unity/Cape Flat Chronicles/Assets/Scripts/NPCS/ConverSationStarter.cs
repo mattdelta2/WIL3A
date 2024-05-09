@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DialogueEditor;
+using Unity.VisualScripting;
 
 public class ConverSationStarter : MonoBehaviour
 {
@@ -19,19 +20,13 @@ public class ConverSationStarter : MonoBehaviour
         fpsController = FindObjectOfType<FirstPersonController>();
         Cursor.visible = false;
 
-        // Check if the fpsController reference is successfully assigned
-        if (fpsController == null)
-        {
-            Debug.LogWarning("FirstPersonController not found. Make sure a FirstPersonController component is attached to the player.");
-        }
     }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             // Check if fpsController is not null before attempting to access its properties
-            if (fpsController != null && Input.GetKeyDown(KeyCode.F))
+            if (fpsController != null && (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.E))))
             {
                 // Start the conversation using the current conversation from the array
                 ConversationManager.Instance.StartConversation(myconvo[convoUp]);

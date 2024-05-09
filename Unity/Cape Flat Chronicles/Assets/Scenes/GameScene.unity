@@ -147,13 +147,25 @@ PrefabInstance:
       value: 2.6672592
       objectReference: {fileID: 0}
     - target: {fileID: 663240471743722678, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
+      propertyPath: m_Size.z
+      value: 1.175988
+      objectReference: {fileID: 0}
+    - target: {fileID: 663240471743722678, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: m_Center.y
       value: 0.8336296
+      objectReference: {fileID: 0}
+    - target: {fileID: 663240471743722678, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
+      propertyPath: m_Center.z
+      value: 0.087995686
       objectReference: {fileID: 0}
     - target: {fileID: 711161860292161019, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: m_Name
       value: GangMemberTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 1031153168752122547, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 1243989397}
     - target: {fileID: 1031153168752122547, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: myconvo.Array.size
       value: 2
@@ -161,14 +173,14 @@ PrefabInstance:
     - target: {fileID: 1031153168752122547, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: myconvo.Array.data[0]
       value: 
-      objectReference: {fileID: 332561298}
+      objectReference: {fileID: 1456451019}
     - target: {fileID: 1031153168752122547, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: myconvo.Array.data[1]
       value: 
-      objectReference: {fileID: 1456451019}
+      objectReference: {fileID: 332561298}
     - target: {fileID: 4530950940155528026, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.47
+      value: -9.95
       objectReference: {fileID: 0}
     - target: {fileID: 4530950940155528026, guid: b845a9eb60fe9834fb6bcbfdce8679ed, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2054,12 +2066,20 @@ PrefabInstance:
       value: 17.676497
       objectReference: {fileID: 0}
     - target: {fileID: 203204475871338468, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
+      propertyPath: m_Size.z
+      value: 1.3753446
+      objectReference: {fileID: 0}
+    - target: {fileID: 203204475871338468, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: m_Center.y
       value: 8.338249
       objectReference: {fileID: 0}
+    - target: {fileID: 203204475871338468, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
+      propertyPath: m_Center.z
+      value: 0.18767314
+      objectReference: {fileID: 0}
     - target: {fileID: 2379034794365278807, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.64
+      value: 11.21
       objectReference: {fileID: 0}
     - target: {fileID: 2379034794365278807, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2106,17 +2126,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7332357421273828821, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 1243989397}
+    - target: {fileID: 7332357421273828821, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: myconvo.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7332357421273828821, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: myconvo.Array.data[0]
       value: 
-      objectReference: {fileID: 1989872804}
+      objectReference: {fileID: 1638332608}
     - target: {fileID: 7332357421273828821, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: myconvo.Array.data[1]
       value: 
-      objectReference: {fileID: 1638332608}
+      objectReference: {fileID: 1989872804}
     - target: {fileID: 7947467527060148705, guid: 112c5943a91a0424892a7402a81a2f6c, type: 3}
       propertyPath: m_Name
       value: TeacherTrigger
@@ -2693,8 +2717,16 @@ PrefabInstance:
       value: 15.193962
       objectReference: {fileID: 0}
     - target: {fileID: 1152682865932721064, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
+      propertyPath: m_Size.z
+      value: 1.5355984
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152682865932721064, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: m_Center.y
       value: 7.096979
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152682865932721064, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
+      propertyPath: m_Center.z
+      value: 0.2677996
       objectReference: {fileID: 0}
     - target: {fileID: 3323312088129466757, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2741,21 +2773,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5021633214808409854, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 1243989397}
+    - target: {fileID: 5021633214808409854, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: myconvo.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5021633214808409854, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: myconvo.Array.data[0]
       value: 
-      objectReference: {fileID: 968179498}
+      objectReference: {fileID: 1745865912}
     - target: {fileID: 5021633214808409854, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: myconvo.Array.data[1]
       value: 
-      objectReference: {fileID: 1745865912}
+      objectReference: {fileID: 1380379861}
     - target: {fileID: 5021633214808409854, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: myconvo.Array.data[2]
       value: 
-      objectReference: {fileID: 1380379861}
+      objectReference: {fileID: 968179498}
     - target: {fileID: 6309430138201505995, guid: 2a6ce98223b42d843860d29b96a10156, type: 3}
       propertyPath: m_Name
       value: GranTrigger
