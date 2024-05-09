@@ -27,6 +27,7 @@ public class FirstPersonController : MonoBehaviour
     private CharacterController characterController;
 
     public bool isInteractingWithNPC = false;
+    public bool canMove = true;
 
     private void Start()
     {
@@ -45,8 +46,13 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement();
-        HandleRotation();
+        if ((canMove))
+        {
+            HandleMovement();
+            HandleRotation();
+        }
+      //  HandleMovement();
+       // HandleRotation();
     }
 
     void HandleMovement()

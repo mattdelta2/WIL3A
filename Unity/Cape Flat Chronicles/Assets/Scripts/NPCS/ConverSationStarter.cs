@@ -5,15 +5,19 @@ using DialogueEditor;
 
 public class ConverSationStarter : MonoBehaviour
 {
-    private FirstPersonController fpsController;
+    public FirstPersonController fpsController;
 
 
-    [SerializeField] private NPCConversation myconvo;
+
+     public NPCConversation[] myconvo;
+    public int convoUp = 0;
+
 
     private void Start()
     {
         // Assign fpsController to the FirstPersonController component on the player object
         fpsController = FindObjectOfType<FirstPersonController>();
+        Cursor.visible = false;
 
         // Check if the fpsController reference is successfully assigned
         if (fpsController == null)
@@ -29,12 +33,32 @@ public class ConverSationStarter : MonoBehaviour
             // Check if fpsController is not null before attempting to access its properties
             if (fpsController != null && Input.GetKeyDown(KeyCode.F))
             {
+                // Start the conversation using the current conversation from the array
+                ConversationManager.Instance.StartConversation(myconvo[convoUp]);
                 Cursor.visible = true;
-                fpsController.isInteractingWithNPC = true;
-                ConversationManager.Instance.StartConversation(myconvo);
+
+                // Increment the conversation index for the next interaction
+                convoUp++;
+
+                // Ensure the conversation index doesn't go out of bounds
+                if (convoUp >= myconvo.Length)
+                {
+                    convoUp = myconvo.Length - 1; // Stay at the last conversation if we've reached the end
+                }
+                fpsController.canMove = false;
             }
         }
     }
+
+    public  void EndConversation()
+    {
+        if(fpsController!= null)
+        {
+            fpsController.canMove = true;
+            Cursor.visible = false;
+        }
+    }
+
 
 
 }
