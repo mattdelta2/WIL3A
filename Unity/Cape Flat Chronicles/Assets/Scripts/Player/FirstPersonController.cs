@@ -29,6 +29,9 @@ public class FirstPersonController : MonoBehaviour
     public bool isInteractingWithNPC = false;
     public bool canMove = true;
 
+    public int EducationStatus = 0;
+    public int GangStatus = 0;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();

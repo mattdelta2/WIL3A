@@ -54,6 +54,46 @@ public class ConverSationStarter : MonoBehaviour
         }
     }
 
+    public void AddEducation()
+    {
+        fpsController.EducationStatus += 5;
+        fpsController.GangStatus -= 5;
+        if(fpsController.GangStatus <= 0)
+        {
+            fpsController.GangStatus = 0;
+
+        }
+
+    }
+
+    public void AddGangStatus()
+    {
+        fpsController.GangStatus += 5;
+        fpsController.EducationStatus -= 5;
+        if(fpsController.EducationStatus <= 0)
+        {
+            fpsController.EducationStatus = 0;
+        }
+
+    }
+
+    public void StartTask()
+    {
+
+    }
+
+    public void GranEduccationStatus()
+    {
+        fpsController.EducationStatus -= 5;
+
+    }
+
+    public void GranGangStatus()
+    {
+        fpsController.GangStatus -= 5;
+
+    }
+
 
 
 }
