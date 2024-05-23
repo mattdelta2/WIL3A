@@ -880,6 +880,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2977504232678286463, guid: feeee4af88c619848826a46943815b7e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1243989397}
+    - targetCorrespondingSourceObject: {fileID: 2977504232678286463, guid: feeee4af88c619848826a46943815b7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1243989400}
   m_SourcePrefab: {fileID: 100100000, guid: feeee4af88c619848826a46943815b7e, type: 3}
 --- !u!114 &239629600 stripped
 MonoBehaviour:
@@ -2676,6 +2679,19 @@ MonoBehaviour:
   canMove: 1
   EducationStatus: 0
   GangStatus: 0
+--- !u!114 &1243989400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243989393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37ba7a4d4b78c8439751b507674ec41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskManager: {fileID: 1905192654}
 --- !u!1 &1260269263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4181,6 +4197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1905192653}
+  - component: {fileID: 1905192654}
   m_Layer: 0
   m_Name: TaskManager
   m_TagString: Untagged
@@ -4203,6 +4220,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905192654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905192652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5ead051592a0e499d610b079e03e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teacherTasks: []
+  gangMemberTasks: []
 --- !u!1001 &1966167225
 PrefabInstance:
   m_ObjectHideFlags: 0
