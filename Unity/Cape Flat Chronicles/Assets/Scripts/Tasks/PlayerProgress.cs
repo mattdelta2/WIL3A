@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerProgress : MonoBehaviour
 {
 
-    private FirstPersonController fpscontroller;
+    [SerializeField] FirstPersonController fpscontroller;
 
     public TaskManager taskManager;
 
     public void CompleteTask(Task task, string npctype)
     {
-        taskManager.CompleteTask(task);
+       // taskManager.CompleteTask(task);
 
         if(npctype == "Teacher")
         {

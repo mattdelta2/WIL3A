@@ -108,29 +108,13 @@ public class ConverSationStarter : MonoBehaviour
 
     public void AcceptTask()
     {
-        if (taskManager.currentTask != null)
-        {
-            taskManager.currentTask.isAccepted = true;
-            fpsController.AddTask(taskManager.currentTask);
-        }
+        taskManager.AcceptTask();
     }
 
 
     public void DeclineTask()
     {
-        if (taskManager.currentTask != null)
-        {
-            taskManager.currentTask.isAccepted = false;
-            if (gameObject.CompareTag("Teacher"))
-            {
-                fpsController.EducationStatus -= 5;
-            }
-            else if (gameObject.CompareTag("GangMember"))
-            {
-                fpsController.GangStatus -= 5;
-            }
-            EndConversation();
-        }
+        taskManager.DeclineTask();
     }
 
     public void AddEducation()

@@ -94,4 +94,36 @@ public class TaskManager : MonoBehaviour
             }
         }
     }
+
+    public void AcceptTask()
+    {
+        if (currentTask != null)
+        {
+            currentTask.isAccepted = true;
+            fpscontroller.AddTask(currentTask);
+            Debug.Log($"Task Accepted: {currentTask.taskName}");
+        }
+    }
+
+    public void DeclineTask()
+    {
+        if (currentTask != null)
+        {
+            currentTask.isAccepted = false;
+
+            if (currentTask != null)
+            {
+                if (gameObject.CompareTag("Teacher"))
+                {
+                    fpscontroller.EducationStatus -= 5;
+                }
+                else if (gameObject.CompareTag("GangMember"))
+                {
+                    fpscontroller.GangStatus -= 5;
+                }
+                Debug.Log($"Task Declined: {currentTask.taskName}");
+            }
+            
+        }
+    }
 }
