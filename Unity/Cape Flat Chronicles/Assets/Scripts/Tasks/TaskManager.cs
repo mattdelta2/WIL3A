@@ -8,7 +8,8 @@ public class TaskManager : MonoBehaviour
     public List<Task> teacherTasks;
     public List<Task> gangMemberTasks;
     public Task currentTask;
-    [SerializeField] FirstPersonController fpscontroller;
+    public FirstPersonController fpscontroller;
+
     [SerializeField] ConverSationStarter convoStarter;
 
 
@@ -38,25 +39,36 @@ public class TaskManager : MonoBehaviour
 
     public void CompleteTask(string npcType)
     {
-        if (currentTask != null)
+        if (currentTask != null && currentTask.isAccepted)
         {
             currentTask.isCompleted = true;
-
-            // Remove completed task from the list
-            List<Task> tasksToCheck = npcType == "Teacher" ? teacherTasks : gangMemberTasks;
-            tasksToCheck.Remove(currentTask);
+            currentTask.isAccepted = false;
 
             // Adjust status positively for completion
             if (npcType == "Teacher")
             {
-               AddEducation();
+                AddEducation();
             }
             else if (npcType == "GangMember")
             {
-               AddGangStatus();
+                AddGangStatus();
+            }
+
+            if (fpscontroller != null)
+            {
+                fpscontroller.RemoveTask(currentTask);
+                Debug.Log($"Task Completed: {currentTask.taskName}");
+            }
+            else
+            {
+                Debug.LogError("fpsController is null. Ensure it's assigned correctly.");
             }
 
             currentTask = null; // Reset the current task
+        }
+        else
+        {
+            Debug.LogError("No task to complete or task was not accepted.");
         }
     }
 
