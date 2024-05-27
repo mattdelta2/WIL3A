@@ -6,69 +6,35 @@ using Unity.VisualScripting;
 
 public class ConverSationStarter : MonoBehaviour
 {
-    public FirstPersonController fpsController;
+    private FirstPersonController fpsController;
+    private TaskManager taskManager;
 
-
-
-     public NPCConversation[] myconvo;
+    public NPCConversation[] myconvo;
     public int convoUp = 0;
-
-    //Task Management
-    public List<Task> teacherTasks;
-    public List<Task> gangMemberTasks;
-    public Task currentTask;
 
 
     private void Start()
     {
-        // Assign fpsController to the FirstPersonController component on the player object
         fpsController = FindObjectOfType<FirstPersonController>();
+        taskManager = FindObjectOfType<TaskManager>();
         Cursor.visible = false;
-        teacherTasks = new List<Task>
-        {
-            new Task("Collect Homework", "Collect homework from a fellow class mate"),
-
-            new Task("Tell student to come to class", "Students are not showing up to class, Please find them and tell them to come back to class"),
-
-            new Task("Help students with work", "A student is not coping with the work, please can you explain how to do the work")
-
-        };
-        gangMemberTasks = new List<Task>
-        {
-            new Task("Fetch Gwaai", "Find and bring the gwaais to the gang member"),
-
-            new Task("Deliver a message", "Deliver a message to another gang member"),
-
-            new Task("Find a package", "Find a package and deliver back to gang leader"),
-
-            new Task("Take this package", "Deliver a package to another gang member")
-        };
-
     }
-    
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Check if fpsController is not null before attempting to access its properties
             if (fpsController != null && (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.E))))
             {
-                // Start the conversation using the current conversation from the array
                 ConversationManager.Instance.StartConversation(myconvo[convoUp]);
                 Cursor.visible = true;
 
-                // Increment the conversation index for the next interaction
                 convoUp++;
-
-                // Ensure the conversation index doesn't go out of bounds
                 if (convoUp >= myconvo.Length)
                 {
-                    convoUp = myconvo.Length - 1; // Stay at the last conversation if we've reached the end
+                    convoUp = myconvo.Length - 1;
                 }
                 fpsController.canMove = false;
-                // Determine the NPC type and offer task accordingly
-                string npcType = gameObject.CompareTag("Teacher") ? "Teacher" : "GangMember";
-              
             }
         }
     }
@@ -129,15 +95,12 @@ public class ConverSationStarter : MonoBehaviour
 
     public void OfferTask(string npcType)
     {
-        //offers first available task that is not completed
-        List<Task> tasksToCheck = npcType == "Teacher" ? teacherTasks : gangMemberTasks;
+        List<Task> tasksToCheck = npcType == "Teacher" ? taskManager.teacherTasks : taskManager.gangMemberTasks;
         foreach (var task in tasksToCheck)
         {
             if (!task.isAccepted && !task.isCompleted)
             {
-                task.isAccepted = true; // Mark the task as accepted
-               fpsController.activeTasks.Add(task); // Add the task to the activeTasks list
-                Debug.Log($"Accepted task: {task.taskName} - {task.description}");
+                taskManager.currentTask = task;
                 break;
             }
         }
@@ -145,56 +108,30 @@ public class ConverSationStarter : MonoBehaviour
 
     public void AcceptTask()
     {
-        if(currentTask != null)
+        if (taskManager.currentTask != null)
         {
-            currentTask.isCompleted = true;
-            fpsController.AddTask(currentTask);
+            taskManager.currentTask.isAccepted = true;
+            fpsController.AddTask(taskManager.currentTask);
         }
     }
 
+
     public void DeclineTask()
     {
-        if(currentTask != null)
+        if (taskManager.currentTask != null)
         {
-            currentTask.isCompleted = false;
-
+            taskManager.currentTask.isAccepted = false;
             if (gameObject.CompareTag("Teacher"))
             {
                 fpsController.EducationStatus -= 5;
             }
-            else if( gameObject.CompareTag("GangMember"))
+            else if (gameObject.CompareTag("GangMember"))
             {
                 fpsController.GangStatus -= 5;
             }
             EndConversation();
-
         }
     }
-
-    public void CompleteTask(string npcType)
-    {
-        if (currentTask != null)
-        {
-            currentTask.isCompleted = true;
-
-            // Remove completed task from the list
-            List<Task> tasksToCheck = npcType == "Teacher" ? teacherTasks : gangMemberTasks;
-            tasksToCheck.Remove(currentTask);
-
-            // Adjust status positively for completion
-            if (npcType == "Teacher")
-            {
-                AddEducation();
-            }
-            else if (npcType == "GangMember")
-            {
-                AddGangStatus();
-            }
-
-            currentTask = null; // Reset the current task
-        }
-    }
-
 
     public void AddEducation()
     {

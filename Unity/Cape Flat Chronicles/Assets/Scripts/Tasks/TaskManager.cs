@@ -7,6 +7,10 @@ public class TaskManager : MonoBehaviour
 
     public List<Task> teacherTasks;
     public List<Task> gangMemberTasks;
+    public Task currentTask;
+    [SerializeField] FirstPersonController fpscontroller;
+    [SerializeField] ConverSationStarter convoStarter;
+
 
     private void Start()
     {
@@ -32,18 +36,62 @@ public class TaskManager : MonoBehaviour
     }
 
 
-    public void CompleteTask(Task task)
+    public void CompleteTask(string npcType)
     {
-        task.isCompleted = true;
+        if (currentTask != null)
+        {
+            currentTask.isCompleted = true;
+
+            // Remove completed task from the list
+            List<Task> tasksToCheck = npcType == "Teacher" ? teacherTasks : gangMemberTasks;
+            tasksToCheck.Remove(currentTask);
+
+            // Adjust status positively for completion
+            if (npcType == "Teacher")
+            {
+               AddEducation();
+            }
+            else if (npcType == "GangMember")
+            {
+               AddGangStatus();
+            }
+
+            currentTask = null; // Reset the current task
+        }
     }
 
-    public void AcceptTask(Task task)
+    public void AddEducation()
     {
-        task.isAccepted = true;
+        fpscontroller.EducationStatus += 5;
+        fpscontroller.GangStatus -= 5;
+        if (fpscontroller.GangStatus <= 0)
+        {
+            fpscontroller.GangStatus = 0;
+        }
     }
 
-    public void DeclineTask(Task task)
+    public void AddGangStatus()
     {
-        task.isAccepted = false;
+        fpscontroller.GangStatus += 5;
+        fpscontroller.EducationStatus -= 5;
+        if (fpscontroller.EducationStatus <= 0)
+        {
+            fpscontroller.EducationStatus = 0;
+        }
+    }
+
+    public void LogCurrentTasks()
+    {
+        if (fpscontroller.activeTasks.Count == 0)
+        {
+            Debug.Log("No active tasks.");
+        }
+        else
+        {
+            foreach (var task in fpscontroller.activeTasks)
+            {
+                Debug.Log($"Current task: {task.taskName} - {task.description}");
+            }
+        }
     }
 }
