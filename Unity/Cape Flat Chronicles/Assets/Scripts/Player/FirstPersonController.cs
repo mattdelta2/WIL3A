@@ -45,11 +45,7 @@ public class FirstPersonController : MonoBehaviour
         // Attempt to find any Camera component in the scene
         mainCamera = FindObjectOfType<Camera>();
 
-        // Check if mainCamera was successfully assigned
-        if (mainCamera == null)
-        {
-            Debug.LogWarning("No Camera found in the scene. Please ensure a Camera is present and properly assigned.");
-        }
+        
         Cursor.visible = false;
 
         activeTasks = new List<Task>();
@@ -123,13 +119,13 @@ public class FirstPersonController : MonoBehaviour
     {
         if (activeTasks.Count == 0)
         {
-            Debug.Log("No active tasks.");
+            Debug.Log("No accepted tasks.");
         }
         else
         {
             foreach (var task in activeTasks)
             {
-                Debug.Log($"Current task: {task.taskName} - {task.description}");
+                Debug.Log($"Accepted task: {task.taskName} - {task.description}");
             }
         }
     }

@@ -127,21 +127,19 @@ public class ConverSationStarter : MonoBehaviour
     }
 
 
-    public void OfferTask()
+    public void OfferTask(string npcType)
     {
-        //check which NPC you are talking to
-        string npcType = gameObject.CompareTag("Teacher") ? "Teacher" : "GangMember";
-
         //offers first available task that is not completed
         List<Task> tasksToCheck = npcType == "Teacher" ? teacherTasks : gangMemberTasks;
         foreach (var task in tasksToCheck)
         {
-            if(!task.isAccepted && !task.isCompleted)
+            if (!task.isAccepted && !task.isCompleted)
             {
-                currentTask = task;
+                task.isAccepted = true; // Mark the task as accepted
+               fpsController.activeTasks.Add(task); // Add the task to the activeTasks list
+                Debug.Log($"Accepted task: {task.taskName} - {task.description}");
                 break;
             }
-            
         }
     }
 
