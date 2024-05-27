@@ -13,12 +13,36 @@ public class ConverSationStarter : MonoBehaviour
      public NPCConversation[] myconvo;
     public int convoUp = 0;
 
+    //Task Management
+    public List<Task> teacherTasks;
+    public List<Task> gangMemberTasks;
+    public Task currentTask;
+
 
     private void Start()
     {
         // Assign fpsController to the FirstPersonController component on the player object
         fpsController = FindObjectOfType<FirstPersonController>();
         Cursor.visible = false;
+        teacherTasks = new List<Task>
+        {
+            new Task("Collect Homework", "Collect homework from a fellow class mate"),
+
+            new Task("Tell student to come to class", "Students are not showing up to class, Please find them and tell them to come back to class"),
+
+            new Task("Help students with work", "A student is not coping with the work, please can you explain how to do the work")
+
+        };
+        gangMemberTasks = new List<Task>
+        {
+            new Task("Fetch Gwaai", "Find and bring the gwaais to the gang member"),
+
+            new Task("Deliver a message", "Deliver a message to another gang member"),
+
+            new Task("Find a package", "Find a package and deliver back to gang leader"),
+
+            new Task("Take this package", "Deliver a package to another gang member")
+        };
 
     }
     
@@ -42,7 +66,24 @@ public class ConverSationStarter : MonoBehaviour
                     convoUp = myconvo.Length - 1; // Stay at the last conversation if we've reached the end
                 }
                 fpsController.canMove = false;
+                // Determine the NPC type and offer task accordingly
+                string npcType = gameObject.CompareTag("Teacher") ? "Teacher" : "GangMember";
+              
             }
+        }
+    }
+
+    private void StartConversation()
+    {
+        ConversationManager.Instance.StartConversation(myconvo[convoUp]);
+        Cursor.visible = true;
+        fpsController.canMove = false;
+
+        //inscreasing the conversation Index for next Interaction
+        convoUp++;
+        if(convoUp >= myconvo.Length)
+        {
+            convoUp = myconvo.Length - 1; //stays at last Convo if no more Conversations are available
         }
     }
 
@@ -84,6 +125,75 @@ public class ConverSationStarter : MonoBehaviour
             Cursor.visible = false;
         }
     }
+
+
+    public void OfferTask()
+    {
+        //check which NPC you are talking to
+        string npcType = gameObject.CompareTag("Teacher") ? "Teacher" : "GangMember";
+
+        //offers first available task that is not completed
+        List<Task> tasksToCheck = npcType == "Teacher" ? teacherTasks : gangMemberTasks;
+        foreach (var task in tasksToCheck)
+        {
+            if(!task.isAccepted && !task.isCompleted)
+            {
+                currentTask = task;
+                break;
+            }
+            
+        }
+    }
+
+    public void AcceptTask()
+    {
+        if(currentTask != null)
+        {
+            currentTask.isCompleted = true;
+            fpsController.AddTask(currentTask);
+        }
+    }
+
+    public void DeclineTask()
+    {
+        if(currentTask != null)
+        {
+            currentTask.isCompleted = false;
+
+            if (gameObject.CompareTag("Teacher"))
+            {
+                fpsController.EducationStatus -= 5;
+            }
+            else if( gameObject.CompareTag("GangMember"))
+            {
+                fpsController.GangStatus -= 5;
+            }
+            EndConversation();
+
+        }
+    }
+
+    public void CompleteTask()
+    {
+        if (currentTask != null)
+        {
+            currentTask.isCompleted = true;
+            fpsController.RemoveTask(currentTask);
+
+            // Adjust status positively for completion
+            if (gameObject.CompareTag("Teacher"))
+            {
+                AddEducation();
+            }
+            else if (gameObject.CompareTag("GangMember"))
+            {
+                AddGangStatus();
+            }
+
+            currentTask = null; // Reset the current task
+        }
+    }
+
 
     public void AddEducation()
     {

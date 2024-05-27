@@ -27,10 +27,16 @@ public class FirstPersonController : MonoBehaviour
     private CharacterController characterController;
 
     public bool isInteractingWithNPC = false;
-    public bool canMove = true;
+   
 
+
+    //Task and Status Management
     public int EducationStatus = 0;
     public int GangStatus = 0;
+    public bool canMove = true;
+    public List<Task> activeTasks;
+
+
 
     private void Start()
     {
@@ -45,6 +51,8 @@ public class FirstPersonController : MonoBehaviour
             Debug.LogWarning("No Camera found in the scene. Please ensure a Camera is present and properly assigned.");
         }
         Cursor.visible = false;
+
+        activeTasks = new List<Task>();
     }
 
     private void Update()
@@ -99,6 +107,31 @@ public class FirstPersonController : MonoBehaviour
         isInteractingWithNPC = false;
         Cursor.visible = false ;
         
+    }
+
+    public void AddTask(Task newTask)
+    {
+        activeTasks.Add(newTask);
+    }
+
+    public void RemoveTask(Task completedTask)
+    {
+        activeTasks.Remove(completedTask);
+    }
+
+    public void LogCurrentTasks()
+    {
+        if (activeTasks.Count == 0)
+        {
+            Debug.Log("No active tasks.");
+        }
+        else
+        {
+            foreach (var task in activeTasks)
+            {
+                Debug.Log($"Current task: {task.taskName} - {task.description}");
+            }
+        }
     }
 
 }
