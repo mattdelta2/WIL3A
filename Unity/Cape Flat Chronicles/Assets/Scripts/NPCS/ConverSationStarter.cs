@@ -171,20 +171,24 @@ public class ConverSationStarter : MonoBehaviour
         }
     }
 
-    public void CompleteTask()
+    public void CompleteTask(string npcType)
     {
         if (currentTask != null)
         {
             currentTask.isCompleted = true;
             fpsController.RemoveTask(currentTask);
+            List<Task> tasksToCheck = npcType == "Teacher" ? teacherTasks : gangMemberTasks;
 
             // Adjust status positively for completion
             if (gameObject.CompareTag("Teacher"))
             {
                 AddEducation();
+                Debug.Log($"Accepted task: {task.taskName} - {task.description}");
             }
             else if (gameObject.CompareTag("GangMember"))
             {
+                Debug.Log($"Accepted task: {task.taskName} - {task.description}");
+
                 AddGangStatus();
             }
 
