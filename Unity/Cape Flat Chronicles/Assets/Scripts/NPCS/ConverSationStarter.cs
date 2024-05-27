@@ -176,19 +176,18 @@ public class ConverSationStarter : MonoBehaviour
         if (currentTask != null)
         {
             currentTask.isCompleted = true;
-            fpsController.RemoveTask(currentTask);
+
+            // Remove completed task from the list
             List<Task> tasksToCheck = npcType == "Teacher" ? teacherTasks : gangMemberTasks;
+            tasksToCheck.Remove(currentTask);
 
             // Adjust status positively for completion
-            if (gameObject.CompareTag("Teacher"))
+            if (npcType == "Teacher")
             {
                 AddEducation();
-                Debug.Log($"Accepted task: {task.taskName} - {task.description}");
             }
-            else if (gameObject.CompareTag("GangMember"))
+            else if (npcType == "GangMember")
             {
-                Debug.Log($"Accepted task: {task.taskName} - {task.description}");
-
                 AddGangStatus();
             }
 
@@ -220,10 +219,7 @@ public class ConverSationStarter : MonoBehaviour
 
     }
 
-    public void StartTask()
-    {
 
-    }
 
     public void GranEduccationStatus()
     {

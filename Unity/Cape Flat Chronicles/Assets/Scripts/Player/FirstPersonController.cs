@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,6 +37,10 @@ public class FirstPersonController : MonoBehaviour
     public bool canMove = true;
     public List<Task> activeTasks;
 
+    //ui
+    public TextMeshProUGUI GangStatusUI;
+    public TextMeshProUGUI EduStatusUI;
+
 
 
     private void Start()
@@ -49,6 +54,8 @@ public class FirstPersonController : MonoBehaviour
         Cursor.visible = false;
 
         activeTasks = new List<Task>();
+        GangStatusUI.text = GangStatus.ToString();
+        EduStatusUI.text = EducationStatus.ToString();
     }
 
     private void Update()
@@ -58,8 +65,10 @@ public class FirstPersonController : MonoBehaviour
             HandleMovement();
             HandleRotation();
         }
-      //  HandleMovement();
-       // HandleRotation();
+        //  HandleMovement();
+        // HandleRotation();
+        GangStatusUI.text = GangStatus.ToString();
+        EduStatusUI.text = EducationStatus.ToString();
     }
 
     void HandleMovement()
@@ -109,11 +118,12 @@ public class FirstPersonController : MonoBehaviour
     {
         activeTasks.Add(newTask);
     }
-
     public void RemoveTask(Task completedTask)
     {
         activeTasks.Remove(completedTask);
     }
+
+
 
     public void LogCurrentTasks()
     {
