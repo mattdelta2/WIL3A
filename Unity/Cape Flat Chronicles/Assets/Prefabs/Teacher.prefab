@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5653095031470610726}
   - component: {fileID: 5903564839206025721}
   - component: {fileID: 963943682242509000}
+  - component: {fileID: 9083292279786176271}
   m_Layer: 0
   m_Name: Teacher
   m_TagString: Teacher
@@ -109,6 +110,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9083292279786176271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538899535455910568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ac915098e19d4ebaff717d451a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rotationSpeed: 10
 --- !u!1 &7947467527060148705
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +137,7 @@ GameObject:
   - component: {fileID: 4370215535507485993}
   - component: {fileID: 203204475871338468}
   - component: {fileID: 7332357421273828821}
+  - component: {fileID: 6324538550393179861}
   m_Layer: 0
   m_Name: Teacher Trigger
   m_TagString: Untagged
@@ -227,10 +243,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62e75e1611431a4fb09e5a22ad8c9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpsController: {fileID: 0}
   myconvo:
   - {fileID: 0}
   convoUp: 0
+--- !u!114 &6324538550393179861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7947467527060148705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ac915098e19d4ebaff717d451a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rotationSpeed: 10
 --- !u!1001 &7859245638123947905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,8 +327,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 175f3c4eb1561bc4e904a90f87148888, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4038334398455625934}
   m_SourcePrefab: {fileID: 100100000, guid: 175f3c4eb1561bc4e904a90f87148888, type: 3}
+--- !u!1 &7048361657485474512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 175f3c4eb1561bc4e904a90f87148888, type: 3}
+  m_PrefabInstance: {fileID: 7859245638123947905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4038334398455625934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7048361657485474512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ac915098e19d4ebaff717d451a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rotationSpeed: 10
 --- !u!4 &7681767923116400746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 175f3c4eb1561bc4e904a90f87148888, type: 3}

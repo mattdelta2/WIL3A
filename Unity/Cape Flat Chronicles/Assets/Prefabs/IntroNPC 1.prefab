@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 181788799547725648}
   - component: {fileID: 3410387084947014570}
   - component: {fileID: 3805177804745634195}
+  - component: {fileID: 5195614314439425902}
   m_Layer: 0
   m_Name: IntroNPCTrigger
   m_TagString: Untagged
@@ -118,12 +119,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62e75e1611431a4fb09e5a22ad8c9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpsController: {fileID: 0}
   myconvo:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   convoUp: 0
+--- !u!114 &5195614314439425902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78318968509532019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ac915098e19d4ebaff717d451a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rotationSpeed: 5
 --- !u!1 &3504040810135824097
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +150,7 @@ GameObject:
   - component: {fileID: 3375627619624431995}
   - component: {fileID: 1012280802356957162}
   - component: {fileID: 3370680384443567801}
+  - component: {fileID: 1251810339973324559}
   m_Layer: 0
   m_Name: IntroNPC 1
   m_TagString: Untagged
@@ -233,6 +248,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1251810339973324559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3504040810135824097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ac915098e19d4ebaff717d451a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rotationSpeed: 5
 --- !u!1001 &8200471412282402125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -292,10 +321,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f069ddf8d3b78645aaad4b55b038e67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7618643992097147719}
   m_SourcePrefab: {fileID: 100100000, guid: 0f069ddf8d3b78645aaad4b55b038e67, type: 3}
 --- !u!4 &8522873386323133094 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f069ddf8d3b78645aaad4b55b038e67, type: 3}
   m_PrefabInstance: {fileID: 8200471412282402125}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9010722763431450652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f069ddf8d3b78645aaad4b55b038e67, type: 3}
+  m_PrefabInstance: {fileID: 8200471412282402125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7618643992097147719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9010722763431450652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ac915098e19d4ebaff717d451a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rotationSpeed: 5

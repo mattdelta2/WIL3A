@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5604554057060740806}
   - component: {fileID: 5070532288958881282}
   - component: {fileID: 8591364692277201620}
+  - component: {fileID: 3735532267676264903}
   m_Layer: 0
   m_Name: LewisTrigger
   m_TagString: Untagged
@@ -118,9 +119,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62e75e1611431a4fb09e5a22ad8c9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpsController: {fileID: 0}
   myconvo: []
   convoUp: 0
+--- !u!114 &3735532267676264903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45093235088699006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ac915098e19d4ebaff717d451a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rotationSpeed: 10
 --- !u!1 &1366411754092519287
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +147,7 @@ GameObject:
   - component: {fileID: 3624539837556351774}
   - component: {fileID: 2582556819209365981}
   - component: {fileID: 2899121301234904572}
+  - component: {fileID: 1359594877704599635}
   m_Layer: 0
   m_Name: Lewis 1
   m_TagString: Untagged
@@ -230,6 +245,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1359594877704599635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366411754092519287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ac915098e19d4ebaff717d451a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rotationSpeed: 10
 --- !u!1001 &2044429527516639893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,8 +318,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9774d78121f003e44a339c9e61921609, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7400281974929678515}
   m_SourcePrefab: {fileID: 100100000, guid: 9774d78121f003e44a339c9e61921609, type: 3}
+--- !u!1 &1197442943128948676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9774d78121f003e44a339c9e61921609, type: 3}
+  m_PrefabInstance: {fileID: 2044429527516639893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7400281974929678515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197442943128948676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42ac915098e19d4ebaff717d451a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  rotationSpeed: 10
 --- !u!4 &2005787040654792062 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9774d78121f003e44a339c9e61921609, type: 3}

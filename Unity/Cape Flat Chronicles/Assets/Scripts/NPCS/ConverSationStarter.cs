@@ -11,12 +11,14 @@ public class ConverSationStarter : MonoBehaviour
 
     public NPCConversation[] myconvo;
     public int convoUp = 0;
+    private NPCLookAtPlayer npcLookAtPlayer;
 
 
     private void Start()
     {
         fpsController = FindObjectOfType<FirstPersonController>();
         taskManager = FindObjectOfType<TaskManager>();
+        npcLookAtPlayer = GetComponent<NPCLookAtPlayer>();
         Cursor.visible = false;
     }
 
@@ -26,15 +28,12 @@ public class ConverSationStarter : MonoBehaviour
         {
             if (fpsController != null && (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.E))))
             {
-                ConversationManager.Instance.StartConversation(myconvo[convoUp]);
-                Cursor.visible = true;
-
-                convoUp++;
-                if (convoUp >= myconvo.Length)
+                if (npcLookAtPlayer != null)
                 {
-                    convoUp = myconvo.Length - 1;
+                    npcLookAtPlayer.LookAtPlayer(); // Make NPC look at the player
                 }
-                fpsController.canMove = false;
+
+                StartConversation();
             }
         }
     }
@@ -152,6 +151,12 @@ public class ConverSationStarter : MonoBehaviour
     {
         fpsController.GangStatus -= 5;
 
+    }
+
+
+    public void QuestDenied()
+    {
+        convoUp--;
     }
 
 
