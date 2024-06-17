@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 1244389632}
   - component: {fileID: 1244389631}
   m_Layer: 5
-  m_Name: ElementalBattleGrounds
+  m_Name: 'Cape Flat Chronicles  '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Elemental Battlegrounds
+  m_text: 'Cape Flat Chronicles
 
 
 '
