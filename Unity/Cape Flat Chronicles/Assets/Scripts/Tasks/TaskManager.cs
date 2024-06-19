@@ -9,6 +9,8 @@ public class TaskManager : MonoBehaviour
     public List<Task> gangMemberTasks;
     public Task currentTask;
     public FirstPersonController fpscontroller;
+    public GameObject GangEnd;
+    public GameObject EduEnd;
 
     [SerializeField] ConverSationStarter convoStarter;
 
@@ -136,6 +138,37 @@ public class TaskManager : MonoBehaviour
                 Debug.Log($"Task Declined: {currentTask.taskName}");
             }
             
+        }
+    }
+
+    public void EndGame()
+    {
+        if(fpscontroller.GangStatus == 20)
+        {
+            Time.timeScale = 0;
+            GangEnd.SetActive(true);
+            if (fpscontroller != null)
+            {
+                fpscontroller.enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+
+
+        }
+        else
+            if(fpscontroller.EducationStatus ==20)
+        {
+            Time.timeScale = 0;
+
+            EduEnd.SetActive(true);
+            if (fpscontroller != null)
+            {
+                fpscontroller.enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+
         }
     }
 }
